@@ -93,7 +93,7 @@ with tabs[0]:
         stack_clf.fit(X_train_smote, y_train_smote)
 
         # Prediksi pada data uji
-        y_test_pred = stack_clf.predict(X_test)
+        y_test_pred = joblib.load('knn_model.pkl')
         
         # Prediksi untuk data baru
         X_new = scaler.transform([st.session_state.knn_data])
